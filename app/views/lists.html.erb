@@ -1,0 +1,47 @@
+<!--<h1>Showing all list</h1>
+
+<%@lists.each do |list| %>
+<p>List Name: <%=list%></p>
+<%end%>
+
+
+
+<hr><h4>Create New List</h4><hr>
+<form action="/lists" method="post">
+  <label for="list_title">Name:</label><br />
+  <input id="list_title" name="list_name" type="text" />
+  <input type="submit" value="Create List" />
+</form>
+!-->
+
+
+<div class="wrapper">
+	<div class="lists container">
+​
+		<h1 class="heading text-center">Your Lists</h1>
+
+		<div class="row">
+			<% @lists.each do |list| %>
+				<div class="col-md-3">
+					<h3 class="text-center">
+					 	<a href="lists/<%= list %>"> <%= list %> </a>
+					 </h3>
+				</div>
+			<% end %>
+		</div>
+​
+		<div class="row create-list-form">
+			<div class="col-md-4 col-md-offset-4">
+			<br><br><br><br><br>
+				<hr><h4 class="text-center">Create New List</h4><hr>
+				<form action="/lists" method="post">
+				  <label for="list_title">Name:</label>
+				  <input id="list_title" name="list_name" type="text" />
+				  <input type="submit" value="Create List" />
+				</form>
+			</div>
+		</div>
+​
+	</div>
+</div>
+​

@@ -1,0 +1,17 @@
+<% @task_objects.each do |task| %>
+      <p>
+        <form action="/items/<%=task.id%>" method="post">
+          <%=task.name%>
+          <input type="submit" name ="_method" value="Delete">
+        </form>
+      </p>
+    <% end %>
+
+        <hr><h4>Create New Task</h4><hr>
+        <form action="/lists/<%=@list_name%>/items" method="post">
+          <label for="task_title">Name:</label><br />
+          <input id="task_title" name="name_task" type="text" />
+
+          <input type="submit" value="Create Task" />
+
+        </form>

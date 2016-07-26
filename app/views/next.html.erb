@@ -1,0 +1,27 @@
+<h1>Create a New List </h1>
+
+<h1>Add Task <%= @task.name %></h1>
+
+<form action="/tasks/<%= @task.id %>" method="post">
+  <!-- YOU NEED DIS -->
+  <input type="hidden" name="_method" value="PATCH">
+  <!-- YOU NEED DIS  ^^^^^^^^^^^^^^^^^^^-->
+
+  <label for="name">Name</label>
+  <input type="text" name="task[name]" value="<%= @task.name %>" placeholder="Task Name">
+
+  <label for="description">Description</label>
+  <input id="description" type="text" name="task[email]" value="<%= @task.description %>" placeholder="enter description">
+
+  <label for="complete">Mark Complete</label>
+  <input type="radio" name="task[complete]" value="<%= @task.complete %>" ">
+
+  <input type="submit" name="submit" value="Save">
+</form>
+
+
+
+
+<%=@next_task %>
+
+<%end%>

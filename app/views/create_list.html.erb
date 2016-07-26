@@ -1,0 +1,17 @@
+<h1>Create a New List </h1>
+
+<h1>Create a New List  <%= list.name %></h1>
+
+<form action="/list/<%= @list.id %>" method="post">
+  <!-- YOU NEED DIS -->
+  <input type="hidden" name="_method" value="PATCH">
+  <!-- YOU NEED DIS  ^^^^^^^^^^^^^^^^^^^-->
+
+  <label for="name">Name</label>
+  <input type="text" name="list[name]" value="<%= @list.name %>" placeholder="List Name">
+
+
+  <input type="submit" name="submit" value="Save">
+</form>
+
+<%end%>

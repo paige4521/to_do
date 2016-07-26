@@ -1,0 +1,18 @@
+<h1>Editing <%= @task.name %></h1>
+
+<form action="/users/<%= @task.id %>" method="post">
+  <!-- YOU NEED DIS -->
+  <input type="hidden" name="_method" value="PATCH">
+  <!-- YOU NEED DIS  ^^^^^^^^^^^^^^^^^^^-->
+
+  <label for="name">Name</label>
+  <input type="text" name="user[name]" value="<%= @task.name %>" placeholder="Jane Smith">
+
+  <label for="email">Email</label>
+  <input id="email" type="text" name="user[email]" value="<%= @task.description %>" description="description">
+#need to change this to a checkbox
+  <label for="task_complete">Complete</label>
+  <input type="radio" name="complete" value="<%= @task.complete %>">
+
+  <input type="submit" name="submit" value="Save">
+</form>
