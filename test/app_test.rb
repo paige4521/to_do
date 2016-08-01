@@ -21,5 +21,5 @@ class AppTest < Minitest::Test
 
   def test_get_list
     response = get "/lists"
-    assert_includes(response.body, "")
+    assert_includes(response.body, "Create"), "Create"
 end
